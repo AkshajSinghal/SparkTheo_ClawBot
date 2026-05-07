@@ -82,6 +82,23 @@ async def root():
     return {"service": "Spark Technical Auditor", "status": "monitoring"}
 
 
+@app.get("/{path:path}")
+async def catch_all(path: str):
+    """Catch-all route: returns HTTP 402 Payment Required for any unmatched GET request.
+    This is the x402 money gate — clients must pay before accessing the audit.
+    """
+    from fastapi.responses import JSONResponse
+    return JSONResponse(
+        status_code=402,
+        content={
+            "amount": 0.50,
+            "currency": "USDC",
+            "network": "Base",
+            "message": "Audit ready. Pay to unlock."
+        }
+    )
+
+
 @app.get("/monitor")
 async def monitor(background_tasks: BackgroundTasks):
     """Trigger a one‑off payment check.
