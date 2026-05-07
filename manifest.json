@@ -1,0 +1,31 @@
+{
+  "service": {
+    "name": "Spark Technical Auditor",
+    "description": "High-efficiency autonomous programming assistant specializing in code auditing, Python debugging, and GitHub task management",
+    "category": "code-audit",
+    "capabilities": [
+      "python-debugging",
+      "code-auditing", 
+      "github-automation",
+      "web3-integration",
+      "shell-execution"
+    ]
+  },
+  "pricing": {
+    "currency": "USDC",
+    "network": "base-mainnet",
+    "rate_per_task": "0.50",
+    "unit": "standard code audit"
+  },
+  "payment": {
+    "settlement_address": "0x7aa4E2f9F661f43CC0639A59B6a1942C9C5396d1",
+    "contract": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+    "chain_id": 8453
+  },
+  "endpoint": {
+    "protocol": "x402",
+    "type": "agentic-worker",
+    "listen_port": null
+  },
+  "version": "1.0.0"
+}
